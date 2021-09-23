@@ -15,7 +15,7 @@
       <button class="button">Boom?</button>
     </div>
 
-    <div class="messages">
+    <div class="messages"></div>
       <p class="lorem">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto sequi officiis assumenda voluptas libero voluptates hic quia neque ipsam earum ullam modi, totam quasi dolorem fugiat expedita error vitae eos!</p>
     </div>
 
@@ -23,11 +23,14 @@
       const text = document.querySelector('.lorem');
       
       for (let index = 0; index < 5; index++) {
+        
         const message = document.createElement('article');
         message.classList = 'message';
         message.textContent = text.textContent;
         console.log(message);
-        document.querySelector('.messages').appendChild(message);        
+        setTimeout(() => {
+          document.querySelector('body').appendChild(message);           
+        }, 3000)
       }
 
       text.style.display = 'none';
